@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link, BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
 import { PrivateRoute, UnAuthRoute } from "./PrivateRoute";
-import { Provider, useSelector } from "react-redux";
+import { Provider, useSelector, useDispatch } from "react-redux";
 import store from "./redux/store";
 
 import "./App.scss";
@@ -10,15 +10,29 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 
 const Navbar = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
   const token = useSelector((state) => state.user.token);
   const isAuth = !!localStorage.token || !!token ? true : false;
+
+  const handleLogout = () => {
+    dispatch({type: "USER_LOGOUT"})
+    history.push("/")
+  }
   return (
     <div className="nav-container">
       <nav>
         <Link to="/">
           <img src="/static/images/shop-logo.png" alt="Shopping" />
         </Link>
-        {isAuth ? <Link to="/shop">Shop</Link> : <Link to="/login">Login</Link>}
+        {isAuth ? (
+          <div>
+            <Link to="/shop">Shop</Link>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </nav>
     </div>
   );
