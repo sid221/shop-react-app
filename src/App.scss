@@ -1,0 +1,135 @@
+div.page-container {
+  height: 100vh;
+  min-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+
+  // Navbar Styles
+  > div.nav-container {
+    height: 3.5rem;
+    flex-grow: 0;
+    padding: 0 6rem;
+    background-color: #f3f3f3;
+    > nav {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > a {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500;
+        > img {
+          padding: 0.2rem 0;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  // Footer copyright styles
+  > footer {
+    > h4 {
+      margin: 0.5rem;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+
+  // Login Page Styles
+  > div.login-page-container {
+    flex-grow: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > form.login-form {
+      max-width: 28rem;
+      border-radius: 10px;
+      box-shadow: 0px 0px 12px 0px #b8bdbd;
+      padding: 1rem 3rem;
+      > div {
+        display: flex;
+        margin: 1.2rem 0;
+        min-height: 2.2rem;
+        > label {
+          align-self: center;
+          height: 100%;
+          width: 5.5rem;
+          color: #152424;
+          font-size: 1.1rem;
+          font-weight: 500;
+        }
+        > input {
+          min-height: 100%;
+          border: none;
+          border-bottom: 1px solid #aaaaaa;
+          padding: 0 0.5rem;
+          color: #152424;
+          font-size: 1rem;
+          &:focus {
+            outline: none;
+            box-shadow: 0px 0px 6px 0px #b8bdbd;
+          }
+        }
+        > button {
+          width: 100%;
+          margin-top: 2.5rem;
+          height: 2.2rem;
+          background-color: #8f99ff;
+          border: none;
+          border-radius: 5px;
+          font-size: 20px;
+          color: #152424;
+          &:focus {
+            outline: #b8bdbd;
+          }
+          &:hover {
+            box-shadow: 0px 0px 6px 0px #b8bdbd;
+          }
+        }
+      }
+    }
+  }
+
+  // Home Page Styles
+  > div.home-page-container {
+    flex-grow: 10;
+    padding: 1rem 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > section {
+      display: flex;
+      flex-direction: row;
+      > div {
+        width: 50%;
+      }
+      > div.content-container {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        align-self: center;
+        > h1 {
+          max-width: 30rem;
+          font-size: 2.5rem;
+        }
+        > p {
+          max-width: 30rem;
+          text-align: justify;
+          color: #152424;
+          font-size: 1.1rem;
+          padding-right: 4rem;
+        }
+      }
+      > div.image-container {
+        align-self: center;
+        justify-self: center;
+        > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
