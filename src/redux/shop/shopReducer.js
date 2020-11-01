@@ -4,6 +4,8 @@ import {
   DECREMENT_ITEM_IN_CART,
 } from "./shopActionTypes";
 
+import { USER_LOGOUT } from "../user/userActionTypes";
+
 const initialState = {
   products: [
     {
@@ -84,6 +86,10 @@ const shop = (state = initialState, action) => {
         cart: newCart,
         cartItemCount: state.cartItemCount - 1,
       };
+
+    case USER_LOGOUT:
+      localStorage.clear();
+      return { ...initialState };
 
     default:
       return { ...state };
