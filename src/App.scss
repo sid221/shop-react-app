@@ -305,28 +305,69 @@ div.page-container {
   > div.cart-page-conatiner {
     flex-grow: 10;
     padding: 1rem 6rem;
-    > div.cart-empty-markup {
+    > div.cart-section {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      > a {
-        all: unset;
-        margin-top: 2rem;
-        padding: 0.5rem 4rem;
-        border-radius: 10px;
-        background-color: #f4f2ff;
-        color: #152424;
-        font-size: 22px;
-        box-shadow: 0 0 3px 0 #152424;
-        cursor: pointer;
-        &:hover {
-          background-color: #e8e8e8;
+      flex-direction: row;
+      > div.cart-empty-markup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        > a {
+          all: unset;
+          margin-top: 2rem;
+          padding: 0.5rem 4rem;
+          border-radius: 10px;
+          background-color: #f4f2ff;
+          color: #152424;
+          font-size: 22px;
+          box-shadow: 0 0 3px 0 #152424;
+          cursor: pointer;
+          &:hover {
+            background-color: #e8e8e8;
+          }
+        }
+      }
+      > div.cart-bill-container {
+        > h2 {
+          text-align: center;
+        }
+        height: max-content;
+        min-width: 280px;
+        margin-left: 1.5rem;
+        padding: 1rem;
+        box-shadow: 0px 0px 4px 0px #b8bdbd;
+        > table {
+          width: 100%;
+          > thead > th {
+            padding-bottom: 0.75rem;
+          }
+          > tbody {
+            text-align: end;
+            > tr > td {
+              padding-bottom: 0.35rem;
+            }
+            >tr.cart-bill-total > th {
+              padding-top: 1rem;
+              &:first-child {
+                text-align: start;
+              }
+            }
+          }
         }
       }
     }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1000px) {
       padding: 1rem 3rem;
+      > div.cart-section {
+        flex-direction: column;
+        > div.cart-bill-container {
+          max-width: 350px;
+          margin-left: 0;
+          padding: 1rem;
+          box-shadow: 0px 0px 4px 0px #b8bdbd;
+        }
+      }
     }
   }
 }
