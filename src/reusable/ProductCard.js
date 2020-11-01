@@ -28,9 +28,6 @@ const ProductCard = ({ name, id, desc, image, price }) => {
   })(id);
 
   const toggleOpenModel = (e) => {
-    // e.preventDefault();
-    console.log("click");
-    console.log(openModel);
     setOpenModel(!openModel);
   };
 

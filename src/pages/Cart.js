@@ -37,10 +37,12 @@ const Cart = () => {
             <h2>Cart Summary</h2>
             <table>
               <thead>
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>Rate</th>
-                <th>Subtotal</th>
+                <tr>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                  <th>Rate</th>
+                  <th>Subtotal</th>
+                </tr>
               </thead>
               <tbody>
                 {cart.map((item) => {
@@ -54,8 +56,8 @@ const Cart = () => {
                   );
                 })}
                 <tr className="cart-bill-total">
-                    <th colSpan={3}>Total</th>
-                    <th>{getTotalPrice}$</th>
+                  <th colSpan={3}>Total</th>
+                  <th>{getTotalPrice}$</th>
                 </tr>
               </tbody>
             </table>

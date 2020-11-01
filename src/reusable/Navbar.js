@@ -8,7 +8,7 @@ const Navbar = () => {
   const token = useSelector((state) => state.user.token);
   const { cartItemCount } = useSelector((state) => state.shop);
   const isAuth = !!localStorage.token || !!token ? true : false;
-  console.log(cartItemCount);
+  // console.log(cartItemCount);
   const handleLogout = () => {
     dispatch({ type: "USER_LOGOUT" });
     history.push("/");
