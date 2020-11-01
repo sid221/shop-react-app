@@ -44,6 +44,7 @@ const initialState = {
   ],
   loading: false,
   cart: [],
+  cartItemCount: 0,
 };
 
 const shop = (state = initialState, action) => {
@@ -52,14 +53,10 @@ const shop = (state = initialState, action) => {
       return {
         ...state,
         cart: [...state.cart, { ...action.payload, quantity: 1 }],
+        cartItemCount: state.cartItemCount + 1,
       };
 
     case INCREMENT_ITEM_IN_CART:
-      // let newCart = state.cart.map((item) => {
-      //   return item.id === action.payload.id
-      //     ? { ...item, quantity: item.quantity + 1 }
-      //     : item;
-      // });
       return {
         ...state,
         cart: state.cart.map((item) => {
@@ -67,6 +64,7 @@ const shop = (state = initialState, action) => {
             ? { ...item, quantity: item.quantity + 1 }
             : item;
         }),
+        cartItemCount: state.cartItemCount + 1,
       };
 
     case DECREMENT_ITEM_IN_CART:
@@ -81,7 +79,11 @@ const shop = (state = initialState, action) => {
           return newCart.push(item);
         }
       });
-      return { ...state, cart: newCart };
+      return {
+        ...state,
+        cart: newCart,
+        cartItemCount: state.cartItemCount - 1,
+      };
 
     default:
       return { ...state };
