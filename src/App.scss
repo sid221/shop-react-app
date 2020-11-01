@@ -214,6 +214,7 @@ div.page-container {
 
   // Product Card Styles
   div.product-card-container {
+    // position: relative;
     max-width: 650px;
     margin-right: 15px;
     flex: 1 0 550px;
@@ -279,6 +280,31 @@ div.page-container {
       }
     }
 
+    > div.product-detail-model {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      box-shadow: 0 0 20px 20px #152424 ;
+      background-color: #f4f2ff;
+      padding: 2rem;
+      border-radius: 10px;
+      padding-top: 3rem;
+      > button {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        border-radius: 10px;
+        border: 1px solid #152424;
+        padding: 0.3rem 1rem;
+        font-size: 12px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
     @media screen and (max-width: 800px) {
       margin-right: 0;
       > div.product-desc-container {
@@ -308,6 +334,7 @@ div.page-container {
     > div.cart-section {
       display: flex;
       flex-direction: row;
+      justify-content: center;
       > div.cart-empty-markup {
         display: flex;
         justify-content: center;
@@ -339,7 +366,7 @@ div.page-container {
         box-shadow: 0px 0px 4px 0px #b8bdbd;
         > table {
           width: 100%;
-          > thead > th {
+          > thead > tr > th {
             padding-bottom: 0.75rem;
           }
           > tbody {
@@ -347,7 +374,7 @@ div.page-container {
             > tr > td {
               padding-bottom: 0.35rem;
             }
-            >tr.cart-bill-total > th {
+            > tr.cart-bill-total > th {
               padding-top: 1rem;
               &:first-child {
                 text-align: start;
