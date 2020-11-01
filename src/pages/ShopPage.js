@@ -6,7 +6,7 @@ const ShopPage = (props) => {
 
   return (
     <div className="shop-page-container">
-      <h1>shop</h1>
+      <h1>Your Online Store</h1>
       <div className="product-list-container">
         {!!products ? (
           products.map((product) => {
